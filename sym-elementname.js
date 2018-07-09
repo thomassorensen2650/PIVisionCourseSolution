@@ -24,6 +24,8 @@
                 BorderRadius: 10,
                 FontSize: 30,
                 ShowPath: false,
+                EnableHighAlarm: false,
+                HighAlarmLimit: 0.0,
                 Height: 50,
                 Width: 300
             }
@@ -48,6 +50,11 @@
     {
         this.onDataUpdate = dataUpdate;
 
+        // Create unique ID and store a reference
+        var c = elem.find('#labelText')[0];
+        c.id = "labelText_" + scope.symbol.Name;
+        scope.LabelObj = c;
+
         function dataUpdate(data)
         {
             if (!data) return;
@@ -58,6 +65,13 @@
             if (data.Path) {
                 scope.Path = data.Path.split("|")[0];
             } 
+
+            // True if there alarm has been enabled and there is a active alarm
+            if (scope.config.EnableHighAlarm == true && parseFloat(data.Value) > parseFloat(scope.config.HighAlarmLimit)) {
+                scope.LabelObj.className = 'alarm';
+            } else {
+                scope.LabelObj.className = '';
+            }
         }
     };
 

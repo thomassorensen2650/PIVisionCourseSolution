@@ -1,0 +1,27 @@
+.alarm {
+    -webkit-animation-name: alarm; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 2s; /* Safari 4.0 - 8.0 */
+    animation-name: alarm;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes alarm {
+    from {
+        color: red;
+    }
+
+    to {
+        color: yellow;
+    }
+}
+
+@keyframes alarm {
+    from {
+        color: red;
+    }
+
+    to {
+        color: yellow;
+    }
+}

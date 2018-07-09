@@ -1,25 +1,30 @@
-<ul kendo-panel-bar class="t-side-panel-bgcolor" style="font-size: 14px;"> 
-	<li class="k-state-active"> 
-		<span class="panel-bar-label-no-wrap">Configuration</span>
-        <div class="config-option-single-row" style="margin:10px 20px; font-size: 14px;">
+<ul kendo-panel-bar class="t-side-panel-bgcolor" style="font-size: 14px;">
+    <li class="k-state-active">
+        <span class="panel-bar-label-no-wrap">Configuration</span>
+        <div>
             <div class="config-option-ie11-overflow-fix">
                 <!-- Code goes here -->
 
-                <div class="config-label">Text Size:</div>
-                <input type="range" min="6" max="50" ng-model="config.FontSize"
-                       style="width:100px; height: 100%; float: right; margin-right: 25px;" />
-                <div class="config-label">Border Radius:</div>
-                <input type="range" min="0" max="20" ng-model="config.BorderRadius"
-                       style="width:100px; height: 100%; float: right; margin-right: 25px;" />
-                <div class="config-label">Show Path:</div>
-                <input type="checkbox" ng-model="config.ShowPath" />
-            </div>
-            <div class="config-option-single-row" style="margin 10px 15px 0 15px">
-                <div class="config-label">Border Width:</div>
-                <input type="range" min="0" max="10" ng-model="config.BorderWidth"
-                       style="width:100px; height: 100%; float: right; margin-right: 25px;" />
-            </div>
-                <div class="config-option-single-row" style="margin 10px 15px 0 15px">
+                <div class="config-option-single-row" style="margin: 10px 15px 0 15px">
+                    <div class="config-label">Text Size:</div>
+                    <input type="range" min="6" max="50" ng-model="config.FontSize"
+                           style="width:100px; height: 100%; float: right; margin-right: 25px;" />
+                </div>
+                <div class="config-option-single-row" style="margin: 10px 15px 0 15px">
+                    <div class="config-label">Border Radius:</div>
+                    <input type="range" min="0" max="20" ng-model="config.BorderRadius"
+                           style="width:100px; height: 100%; float: right; margin-right: 25px;" />
+                </div>
+                <div class="config-option-single-row" style="margin: 10px 15px 0 15px">
+                    <div class="config-label">Show Path:</div>
+                    <input type="checkbox" ng-model="config.ShowPath" />
+                </div>
+                <div class="config-option-single-row" style="margin: 10px 15px 0 15px">
+                    <div class="config-label">Border Width:</div>
+                    <input type="range" min="0" max="10" ng-model="config.BorderWidth"
+                           style="width:100px; height: 100%; float: right; margin-right: 25px;" />
+                </div>
+                <div class="config-option-single-row" style="margin: 10px 15px 0 15px">
                     <div class="config-label">Border Type</div>
                     <select ng-model="config.BorderType" class="config-option-list">
                         <option value="none">None</option>
@@ -28,7 +33,22 @@
                     </select>
                 </div>
             </div>
-</li>
+            </div>
+    </li>
+    <li class="k-state-active">
+        <span class="panel-bar-label-no-wrap">Alarm</span>
+        <div>
+            <div class="config-option-single-row" style="margin: 10px 15px 0 15px">
+                <div class="config-label">Enable Alarm:</div>
+                <input type="checkbox" ng-model="config.EnableHighAlarm" />
+            </div>
+
+            <div class="config-option-single-row" style="margin: 10px 15px 0 15px">
+                <div class="config-label">Alarm limit:</div>
+                <input type="number" ng-model="config.HighAlarmLimit" />
+            </div>
+        </div>
+    </li>
     <li class="k-state-active">
         <span class="panel-bar-label-no-wrap">Colors</span>
         <div>
