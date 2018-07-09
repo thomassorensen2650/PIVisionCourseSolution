@@ -1,7 +1,9 @@
 <div ng-style="{'background-color'  : config.BackgroundColor,
                 'border-radius'     : config.BorderRadius,
-                'color'             : config.FontColor}"
-     style="width:100%;height:100%;">
+                'color'             : config.FontColor,
+                'border'            : config.BorderWidth + 'px ' + config.BorderType + ' ' + config.BorderColor}"
+
+     style="width:100%;height:100%; transition: all linear 0.5s;">
     <p ng-style="{'font-size'   : config.FontSize + 'px'}">{{Label}}</p>
     <p style="word-wrap: break-word" ng-style="{'visibility'  : config.ShowPath ? 'visible' : 'hidden' }">{{Path}}</p>
 </div>

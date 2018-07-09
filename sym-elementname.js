@@ -5,8 +5,8 @@
     PV.deriveVisualizationFromBase(symbolVis);
 
     /**
-     * Simple extention to show the element name
-     * This is usefull to show what assert you are currently looking at.
+     * Simple extension that shows the element name for a attibute
+     * This is usefull to use as header when using templates.
      */
     var definition = {
         typeName: "elementname",
@@ -18,6 +18,9 @@
                 DataShape: 'Value',
                 BackgroundColor: 'Lightskyblue',
                 FontColor: 'black',
+                BorderWidth: 1,
+                BorderType: 'solid',
+                BorderColor: 'Black',
                 BorderRadius: 10,
                 FontSize: 30,
                 ShowPath: false,
@@ -30,6 +33,13 @@
                   {
                       title: "Edit Text",
                       mode: "format"
+                  },
+                  {
+                      // Shortcut to toggle show path
+                      title: 'Toggle Show Path',
+                      action: function (context) {
+                          context.config.ShowPath = !context.config.ShowPath;
+                      }
                   }
               ];
         }
@@ -37,6 +47,7 @@
     symbolVis.prototype.init = function (scope, elem)
     {
         this.onDataUpdate = dataUpdate;
+
         function dataUpdate(data)
         {
             if (!data) return;
@@ -47,9 +58,9 @@
             if (data.Path) {
                 scope.Path = data.Path.split("|")[0];
             } 
-
         }
     };
 
+    // Register custom editor
     PV.symbolCatalog.register(definition);
 })(window.PIVisualization); 
